@@ -86,5 +86,77 @@ const RAPPERS = [
     year: 2025,
     coverUrl: "https://media.pitchfork.com/photos/68e7d2e748e693cdd984408f/2:3/w_1050,h_1575,c_limit/OsamaSon:%20Psykotic.png",
     origin: { lat: 32.9982970435203, lng: -80.0395466999876, label: "Goosecreek, South Carolina, USA" }
-  }
+  },
+  {
+    id: 12,
+    name: "Edward Skeletrix",
+    album: "Museum Music",
+    year: 2025,
+    coverUrl: "https://i.scdn.co/image/ab67616d0000b273baec8cf328e00f44899170e7",
+    origin: { lat: 30.33218, lng: -81.65565, label: "Jacksonville, Florida, USA" }
+  },
+  {
+    id: 13,
+    name: "Forza",
+    album: "Danger",
+    year: "2024",
+    coverUrl: "https://source.boomplaymusic.com/group10/M00/02/10/e474ee2f00d64843b590a114242d7211H3000W3000_464_464.jpg",
+    origin: { lat: 40.7066, lng: 74.5493, label: "Basking Ridge, New Jersey, USA" }
+  },
+  {
+    id: 14,
+    name: "Playboi Carti",
+    album: "Whole Lotta Red",
+    year: 2020,
+    coverUrl: "https://pitchfork.com/reviews/albums/playboi-carti-whole-lotta-red/",
+    origin: { lat: 33.749, lng: -84.388, label: "Atlanta, Georgia, USA" }
+  },
+  {
+    id: 15,
+    name: "Ken Carson",
+    album: "A Great Chaos",
+    year: 2023,
+    coverUrl: "https://en.wikipedia.org/wiki/A_Great_Chaos",
+    origin: { lat: 33.749, lng: -84.388, label: "Atlanta, Georgia, USA" }
+  },
+ {
+  id: 16,
+    name: "Destroy Lonely",
+    album: "If Looks Could Kill",
+    year: 2023,
+    coverUrl: "https://en.wikipedia.org/wiki/If_Looks_Could_Kill_%28Destroy_Lonely_album%29",
+    origin: { lat: 33.749, lng: -84.388, label: "Atlanta, Georgia, USA" }
+ },
+ {
+  id: 17,
+  name: "wave to earth",
+  album: "0.1 Flaws and All",
+  year: 2023,
+  coverUrl: "https://open.spotify.com/album/5T0Gt5JYXh6gEttuB8ujML",
+  origin: { lat: 37.5665, lng: 126.978, label: "Seoul, South Korea" }
+},
+{
+  id: 18,
+  name: "Mitski",
+  album: "Puberty 2",
+  year: 2016,
+  coverUrl: "https://en.wikipedia.org/wiki/Puberty_2",
+  origin: { lat: 35.6762, lng: 139.6503, label: "Tokyo, Japan (raised USA)" }
+},
+{
+  id: 19,
+  name: "Mac DeMarco",
+  album: "Salad Days",
+  year: 2014,
+  coverUrl: "https://macdemarco.bandcamp.com/album/salad-days",
+  origin: { lat: 53.5461, lng: -113.4938, label: "Edmonton, Canada" }
+},
+{
+  id: 20,
+  name: "Clairo",
+  album: "Sling",
+  year: 2021,
+  coverUrl: "https://en.wikipedia.org/wiki/Sling_%28album%29",
+  origin: { lat: 42.3601, lng: -71.0589, label: "Boston, Massachusetts, USA" }
+},
 ];
