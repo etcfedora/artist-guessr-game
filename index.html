@@ -31,7 +31,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .screen { display: none; width: 100vw; height: 100vh; }
 .screen.active { display: flex; }
 
-/* INTRO */
+/* intro */
 #screen-intro { flex-direction: column; align-items: center; justify-content: center; background: var(--black); position: relative; overflow: hidden; }
 .intro-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 110%, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
 .intro-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 40px 40px; opacity: 0.4; pointer-events: none; }
@@ -43,7 +43,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .btn-start { margin-top: 0.5rem; padding: 14px 48px; background: var(--gold); color: var(--black); font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.12em; border: none; cursor: pointer; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.15s, transform 0.1s; }
 .btn-start:hover { background: #e0bf6a; transform: scale(1.03); }
 
-/* GAME */
+/* game */
 #screen-game { flex-direction: column; }
 .game-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; border-bottom: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
 .game-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--gold); }
@@ -55,7 +55,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .header-score span { font-size: 16px; font-weight: 700; color: var(--gold); }
 .game-body { display: grid; grid-template-columns: 300px 1fr; flex: 1; overflow: hidden; }
 
-/* LEFT PANEL */
+/* side panel */
 .left-panel { background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
 .album-wrapper { position: relative; flex-shrink: 0; }
 .album-cover { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; filter: saturate(0.85); }
@@ -79,7 +79,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .btn-confirm.ready { opacity: 1; pointer-events: all; }
 .btn-confirm.ready:hover { background: var(--gold); color: var(--black); }
 
-/* MAP */
+/* map */
 .map-panel { position: relative; }
 #map { width: 100%; height: 100%; background: #335476; }
 .leaflet-container { background: #2f68a2 !important; }
@@ -87,7 +87,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .leaflet-popup-content-wrapper { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 4px !important; color: var(--text) !important; font-family: 'Space Mono', monospace !important; font-size: 12px !important; box-shadow: none !important; }
 .leaflet-popup-tip { background: var(--surface) !important; }
 
-/* RESULT OVERLAY */
+/* result overlay */
 .result-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.82); display: none; align-items: center; justify-content: center; z-index: 1000; }
 .result-overlay.show { display: flex; }
 .result-card { background: var(--surface); border: 1px solid var(--border); width: min(480px, 90vw); padding: 28px; position: relative; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); }
@@ -106,7 +106,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .btn-next { width: 100%; padding: 13px; background: var(--gold); color: var(--black); font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.12em; border: none; cursor: pointer; transition: background 0.15s; }
 .btn-next:hover { background: #6abce0; }
 
-/* FINAL */
+/* final */
 #screen-final { flex-direction: column; align-items: center; justify-content: center; background: var(--black); position: relative; overflow: hidden; }
 .final-content { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; max-width: 480px; padding: 2rem; }
 .final-eyebrow { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
@@ -126,7 +126,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 </head>
 <body>
 
-<!-- INTRO -->
+<!-- intro -->
 <div id="screen-intro" class="screen active">
   <div class="intro-bg"></div>
   <div class="intro-grid"></div>
@@ -138,7 +138,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
   </div>
 </div>
 
-<!-- GAME -->
+<!-- game -->
 <div id="screen-game" class="screen">
   <header class="game-header">
     <div class="game-logo">artistguessr</div>
@@ -193,7 +193,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
   </div>
 </div>
 
-<!-- FINAL -->
+<!-- final -->
 <div id="screen-final" class="screen">
   <div class="intro-bg"></div>
   <div class="intro-grid"></div>
