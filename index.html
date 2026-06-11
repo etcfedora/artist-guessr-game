@@ -93,7 +93,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .result-card { background: var(--surface); border: 1px solid var(--border); width: min(460px, 90vw); padding: 28px; position: relative; border-radius: 4px; }
 .result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--primary); }
 .result-eyebrow { font-size: 11px; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; }
-.result-rapper-name { font-size: 24px; line-height: 1.3; color: var(--text); margin-bottom: 6px; font-weight: 600; }
+.result-artist-name { font-size: 24px; line-height: 1.3; color: var(--text); margin-bottom: 6px; font-weight: 600; }
 .result-origin { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; font-weight: 400; }
 .result-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px; }
 .result-stat { background: var(--surface-light); padding: 14px 12px; text-align: center; border-radius: 3px; }
@@ -133,7 +133,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
   <div class="intro-content">
     <p class="intro-eyebrow">By Liam, Chris, Trevor and Ethan</p>
     <h1 class="intro-title">artistguessr</span></h1>
-    <p class="intro-desc">Guess the birth location of the mystery rapper! Deduce who the rapper is based on the album provided and click their origin on the map!</p>
+    <p class="intro-desc">Guess the birth location of the mystery artist! Deduce who the artist is based on their genre and the album provided and click their origin on the map!</p>
     <button class="btn-start" id="btn-start">Start Game</button>
   </div>
 </div>
@@ -156,10 +156,10 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
         </div>
       </div>
       <div class="panel-info">
-        <div class="rapper-mystery">
+        <div class="artist-mystery">
           <div class="mystery-icon">?</div>
           <div class="mystery-text">
-            <p>Rapper</p>
+            <p>Artist</p>
             <strong id="mystery-label">??? — identity hidden</strong>
           </div>
         </div>
@@ -177,7 +177,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
       <div class="result-overlay" id="result-overlay">
         <div class="result-card">
           <p class="result-eyebrow">Revealed</p>
-          <h2 class="result-rapper-name" id="result-rapper-name"></h2>
+          <h2 class="result-artist-name" id="result-artist-name"></h2>
           <p class="result-origin" id="result-origin"></p>
           <p class="result-origin" id="result-album" style="margin-top:2px;"></p>
           <div class="result-stats">
@@ -203,7 +203,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
     <div class="final-score-display" id="final-score">0</div>
     <p class="final-grade" id="final-grade"></p>
     <div class="final-breakdown">
-      <div class="final-row header"><span>Rapper</span><span>Distance</span><span style="text-align:right">Points</span></div>
+      <div class="final-row header"><span>Artist</span><span>Distance</span><span style="text-align:right">Points</span></div>
       <div id="final-breakdown"></div>
     </div>
     <button class="btn-play-again" id="btn-play-again">Play Again</button>
@@ -211,7 +211,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 </div>
 
 <script>
-const RAPPERS = [
+const ARTISTS = [
   { id:1, name:"Kendrick Lamar", album:"good kid, m.A.A.d city", year:2012, coverUrl:"https://upload.wikimedia.org/wikipedia/en/9/93/KendrickGKMC.jpg", origin:{ lat:33.8958, lng:-118.2201, label:"Compton, California, USA" } },
   { id:2, name:"Drake", album:"Take Care", year:2011, coverUrl:"https://upload.wikimedia.org/wikipedia/en/a/ae/Drake_-_Take_Care_cover.jpg?_=20111104000802", origin:{ lat:43.6532, lng:-79.3832, label:"Toronto, Canada" } },
   { id:3, name:"The Notorious B.I.G.", album:"Ready to Die", year:1994, coverUrl:"https://upload.wikimedia.org/wikipedia/en/9/97/Ready_To_Die.jpg", origin:{ lat:40.6782, lng:-73.9442, label:"Brooklyn, New York, USA" } },
@@ -241,7 +241,7 @@ function resultMessage(km,pts) {
   if(pts>=4500) return "Pinpoint accuracy. You clearly know your geography and your music.";
   if(pts>=3500) return "Very close! You're in the right area — solid knowledge.";
   if(pts>=2000) return "Not bad. You had the right continent at least.";
-  if(pts>=500)  return "A bit off. Brush up on where your favourite rappers are from.";
+  if(pts>=500)  return "A bit off. Brush up on where your favourite artists are from.";
   return "Way off. The other side of the planet won't get you any points.";
 }
 function finalGrade(total) {
@@ -320,7 +320,7 @@ function confirmGuess() {
 }
 
 function showResult(r,km,pts) {
-  document.getElementById('result-rapper-name').textContent=r.name;
+  document.getElementById('result-artist-name').textContent=r.name;
   document.getElementById('result-origin').textContent=r.origin.label;
   document.getElementById('result-album').textContent=`"${r.album}" (${r.year})`;
   const distEl=document.getElementById('result-dist');
@@ -354,7 +354,7 @@ function showFinal() {
 }
 
 function startGame() {
-  state.queue=shuffle(RAPPERS).slice(0,ROUNDS);
+  state.queue=shuffle(ARTISTS).slice(0,ROUNDS);
   state.round=0; state.totalScore=0; state.history=[];
   state.revealed=false; state.currentGuess=null;
   state.guessMarker=null; state.answerMarkers=[]; state.answerLine=null;
