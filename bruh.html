@@ -13,15 +13,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold: #C9A84C;
-  --gold-dim: #8a6f30;
+  --gold: #dc1414;
+  --gold-dim: #b91414;
   --black: #0a0a0a;
   --surface: #111111;
   --surface2: #1a1a1a;
   --surface3: #222222;
   --border: #2a2a2a;
   --text: #f0ece0;
-  --text-muted: #888880;
+  --text-muted: #df1212a9;
   --red: #e03c3c;
   --green: #3ce07a;
 }
@@ -81,8 +81,8 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 
 /* MAP */
 .map-panel { position: relative; }
-#map { width: 100%; height: 100%; background: #1a2a3a; }
-.leaflet-container { background: #1a2a3a !important; }
+#map { width: 100%; height: 100%; background: #335476; }
+.leaflet-container { background: #2f68a2 !important; }
 .leaflet-tile { filter: saturate(0.5) brightness(0.65) hue-rotate(190deg); }
 .leaflet-popup-content-wrapper { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 4px !important; color: var(--text) !important; font-family: 'Space Mono', monospace !important; font-size: 12px !important; box-shadow: none !important; }
 .leaflet-popup-tip { background: var(--surface) !important; }
@@ -104,7 +104,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 .result-stat-lbl { font-size: 10px; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
 .result-message { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; border-left: 2px solid var(--gold-dim); padding-left: 12px; }
 .btn-next { width: 100%; padding: 13px; background: var(--gold); color: var(--black); font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.12em; border: none; cursor: pointer; transition: background 0.15s; }
-.btn-next:hover { background: #e0bf6a; }
+.btn-next:hover { background: #6abce0; }
 
 /* FINAL */
 #screen-final { flex-direction: column; align-items: center; justify-content: center; background: var(--black); position: relative; overflow: hidden; }
@@ -131,9 +131,9 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
   <div class="intro-bg"></div>
   <div class="intro-grid"></div>
   <div class="intro-content">
-    <p class="intro-eyebrow">The Hip-Hop Geography Challenge</p>
-    <h1 class="intro-title">RAP<span>ORIGINS</span></h1>
-    <p class="intro-desc">You'll see an album cover — no name, no hints. Drop a pin on the world map to guess where that rapper is from. The closer you are, the more points you score.</p>
+    <p class="intro-eyebrow">By Liam, Chris, Trevor and Ethan</p>
+    <h1 class="intro-title">artistguessr</span></h1>
+    <p class="intro-desc">Guess the birth location of the mystery rapper! Deduce who the rapper is based on the album provided and click their origin on the map!</p>
     <button class="btn-start" id="btn-start">Start Game</button>
   </div>
 </div>
@@ -141,7 +141,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 <!-- GAME -->
 <div id="screen-game" class="screen">
   <header class="game-header">
-    <div class="game-logo">RAP ORIGINS</div>
+    <div class="game-logo">artistguessr</div>
     <div class="progress-track"></div>
     <div class="header-score">Score: <span id="header-score">0</span></div>
   </header>
@@ -164,7 +164,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
           </div>
         </div>
         <hr class="divider" />
-        <p class="instruction-text">Study the <strong>album cover</strong> for visual clues — city skylines, flags, street signs, slang.<br><br>Click the map to <strong>drop your pin</strong>, then confirm your guess. The rapper's identity is revealed after you submit.</p>
+        <p class="instruction-text">Study the <strong>album cover</strong> and make your guess! Use the name, date of release, and visuals as hints.<br><br>Click the map to <strong>drop your pin</strong> and confirm your guess!</p>
         <div class="guess-info" id="guess-info">
           <div class="dot"></div>
           <span class="guess-text">No guess placed yet</span>
