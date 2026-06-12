@@ -245,7 +245,8 @@ const ARTISTS = [
   { id:46, name:"Shakira", album:"Laundry Service", year:2001, coverUrl:"https://upload.wikimedia.org/wikipedia/en/5/5c/Laundry_Service_cover.png", origin:{ lat:10.9639, lng:-74.7964, label:"Barranquilla, Colombia" } },
   { id:47, name:"Celine Dion", album:"The Colour of My Love", year:1993, coverUrl:"https://upload.wikimedia.org/wikipedia/en/7/72/The_color_of_my_love.jpg", origin:{ lat:45.5017, lng:-73.5673, label:"Quebec City, Canada" } },
   { id:51, name:"Laufey", album:"Bewitched", year:2023, coverUrl:"https://upload.wikimedia.org/wikipedia/en/0/06/Laufey_-_Bewitched.png", origin:{ lat:64.1466, lng:-21.9426, label:"Reykjavik, Iceland" } },
-  { id:52, name:"Beabadoobee", album:"Beatopia", year:2023, coverUrl:"https://upload.wikimedia.org/wikipedia/en/8/81/Beabadoobee_-_Beatopia.png", origin:{ lat:14.5995, lng:120.9842, label:"Manila, Philippines" } }
+  { id:52, name:"Beabadoobee", album:"Beatopia", year:2023, coverUrl:"https://upload.wikimedia.org/wikipedia/en/8/81/Beabadoobee_-_Beatopia.png", origin:{ lat:14.5995, lng:120.9842, label:"Manila, Philippines" } },
+  { id:53, name:"Clairo", album:"Charm", year:2024, coverUrl:"https://upload.wikimedia.org/wikipedia/en/d/dc/Clairo_-_Charm.png", origin:{ lat:33.7490, lng:-84.3880, label:"Atlanta, Georgia, USA" } },
 ];
 
 const ROUNDS = 5;
@@ -262,19 +263,19 @@ function haversineKm(lat1,lng1,lat2,lng2) {
 function calcScore(km) { return Math.max(0, Math.round(5000*Math.exp(-km/2000))); }
 function scoreClass(pts) { return pts>=4000?'great':pts>=2000?'mid':'bad'; }
 function resultMessage(km,pts) {
-  if(pts>=4500) return "Pinpoint accuracy. You clearly know your geography and your music.";
-  if(pts>=3500) return "Very close! You're in the right area — solid knowledge.";
-  if(pts>=2000) return "Not bad. You had the right continent at least.";
-  if(pts>=500)  return "A bit off. Brush up on where your favourite artists are from.";
-  return "Way off. The other side of the planet won't get you any points.";
+  if(pts>=4500) return "Wow that was close! You know your stuff twin!";
+  if(pts>=3500) return "Almost there! So close! Just keep it coming!";
+  if(pts>=2000) return "Not bad, slime. Just brush up on your knowledge and you straight!";
+  if(pts>=500)  return "That was a bit off twin... Do better next time. ";
+  return "Yo... lock in G. That guess was TRASH!";
 }
 function finalGrade(total) {
   const pct=total/(ROUNDS*5000);
-  if(pct>=0.9) return "S TIER — You're a geography professor who moonlights as a rap critic.";
-  if(pct>=0.75) return "A TIER — Very impressive. You actually listen to liner notes.";
-  if(pct>=0.55) return "B TIER — Solid. You know the big names and the big cities.";
-  if(pct>=0.35) return "C TIER — Room to grow. Start with a world map and a playlist.";
-  return "D TIER — Did you have your eyes closed? Keep studying.";
+  if(pct>=0.9) return "You're an expert! Nice one slime!";
+  if(pct>=0.75) return "Pretty impressive... that was some scholarly stuff!";
+  if(pct>=0.55) return "Not bad, twin... keep training and you'll get there some day!";
+  if(pct>=0.35) return "Study up on your artists, G... you can do better than that!";
+  return "Bro lock in next time. That game was horrible.";
 }
 
 function showScreen(id) { document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
